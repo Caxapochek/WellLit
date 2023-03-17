@@ -1,0 +1,93 @@
+{% extends 'ceiling/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section>
+    <div class="container-1200">
+        <div class="grid-center vert-margin-100">
+            <h1>
+                Калькулятор для натяжного потолка
+            </h1>
+            <h4 class="width-600 vert-margin-50">
+                Вы можете посчитать стоимость натяжного потолка для вас. Но помните, что окончательную стоимость можно будет узнать только после замеров нашим экспертом.
+            </h4>
+        </div>
+        <div class="calculator">
+            <div>
+                <div class="calculator-block">
+                    <span class="calculator-label">
+                        Ширина
+                    </span>
+                    <span>
+                        в сантиметрах
+                    </span>
+                    <input class="calculator-input" type="number" min="0" max="10000" id="c-width" value="100">
+                </div>
+                <div class="calculator-block">
+                    <span class="calculator-label">
+                        Длина
+                    </span>
+                    <span>
+                        в сантиметрах
+                    </span>
+                    <input class="calculator-input" type="number" min="0" max="10000"  id="c-length" value="100">
+                </div>
+                <div class="calculator-block">
+                    <span class="calculator-label">
+                        Тип полотна
+                    </span>
+                    <select class="calculator-input"  id="canvases">
+                        {% for ceiling in ceilings %}
+                            <option value={{ceiling.price}}>{{ceiling.model}} {{ceiling.color}}</option>
+                        {% endfor %}
+                        <option value="1350">Тканевая</option>
+                        <option value="2180">Фотопечать</option>
+                    </select>
+                </div>
+                <div class="calculator-block">
+                    <span class="calculator-label">
+                        Декоративная вставка
+                    </span>
+                    <select class="calculator-input"  id="decor-insert">
+                        <option value="0">Нет</option>
+                        <option value="160">Цветная</option>
+                        <option value="60">Белая</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="calculator-block">
+                    <span class="calculator-label">
+                        Монтаж гордины
+                    </span>
+                    <p><input name="gordina" type="radio" value="0" checked="True"> Нет</p>
+                    <p><input name="gordina" type="radio" value="1900"> Да</p>
+                </div>
+                <div class="calculator-block">
+                    <span class="calculator-label">
+                        Количество точек света
+                    </span>
+                    <input class="calculator-input"  type="number" id="light" min="0" max="100" value="0">
+                </div>
+                <div class="calculator-block">
+                    <span class="calculator-label">
+                        Количество труб
+                    </span>
+                    <input class="calculator-input"  type="number" id="pipes" min="0" max="100" value="0">
+                </div>
+                <div id="calculator-result">
+                    <button id="calculat" onclick="get_result()" class="btn-result">Посчитать</button>
+                    
+                    Примерная стоимость: 
+                    <span id="calculator-result-field">
+                        0
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="{% static 'ceiling/js/calculator.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="{% static 'ceiling/css/bootstrap.min.css' %}"/>
+        <link type="text/css" href="{% static 'ceiling/css/style.css' %}" rel="stylesheet">
+        <script defer src="{% static 'ceiling/js/bootstrap.min.js' %}"></script>
+        <script defer src="{% static 'ceiling/js/bootstrap.bundle.min.js' %}"></script>
+        <meta http-equiv="pragma" content="no-cache">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    </head>
+    <body id="body">
+    {% include 'ceiling/header.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'ceiling/footer.html' %}
+    </body>
+</html>

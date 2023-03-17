@@ -1,0 +1,37 @@
+{% load static %}
+<header class="header">
+    <div class="container-1200-header">
+        <div class="header-block">
+            <div onclick="dropmenu()" class="header__burger">
+                <span></span>
+            </div>
+            <a class="logo" href=" {% url 'main' %}">
+                <img src="{% static 'ceiling/images/logos/logo_white.svg' %}" alt="За стеклом">
+            </a>
+            <nav>
+                <ul class="menu">
+                {% for item_menu in menu %}
+                {% if not item_menu.dropdown %}
+                    <li class="menu-item"><a class="white-ref" href="{% url item_menu.url_name %}">{{item_menu.title}}</a></li>
+                {% else %}
+                    <li class="menu-item dropdown">
+                        <a class="white-ref dropbtn" href="#">{{item_menu.title}}</a>
+                        <div  class="dropdown-content">
+                        {% for dropdown_item in item_menu.dropdown_menu %}
+                            <a class="white-ref" href="{% url dropdown_item.url_name %}">{{dropdown_item.title}}</a>                               
+                        {% endfor %}  
+                        </div>                          
+                    </li>
+                {% endif %}
+                {% endfor %}
+                </ul>
+            </nav>
+            <a class="black-ref" href=" {% url 'contactus' %}">Оставить заявку</a>
+        </div>
+    </div>
+</header>
+<div style="height: 80px;"></div> 
+<script type="text/javascript" src="{% static 'ceiling/js/script-header.js' %}"></script>
+
+
+

@@ -1,0 +1,53 @@
+{% extends 'ceiling/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="section-forms" class="block">
+    <div class="container-1200 grid-center">
+        <div class=" vert-margin-50">
+            <h1 class="vert-margin-50">
+                Галерия наших работ
+            </h1>
+        </div>
+   </div>
+</section>
+<section id="section-portfolio-list" class="block">
+    <div class="container-1200">
+        <div class="cards-portfolio">
+        {% for p in portfolio %}
+            <div class="card-portfolio">
+                <h4>{{p.title}}</h4>
+                <div id="carousel{{p.id}}" class="carousel slide">
+                    <div class="carousel-inner">
+                        {% for i in p.portfoliophoto_set.all %}
+                        <div class="carousel-item {% if i.main == True %}active{% endif%}">
+                            <img src="{{ i.img.url }}" class="d-block w-100" alt="">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel{{p.id}}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel{{p.id}}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <p>Площадь: {{p.square}}</p>
+                <p>Помещение: {{p.room}}</p>
+                <p>Тип материала: {{p.material}}</p>
+                <p>Фактура: {{p.invoice}}</p>
+                <p>Цвет: {{p.color}}</p>
+                <p>Углы: {{p.corners}}</p>
+                <p>Профиль: {{p.section}}</p>
+                <p>Точек света: {{p.light}}</p>
+                <p>Обходов труб: {{p.pipe}}</p>
+                <div class="card-portfolio-price"><p>Цена: {{p.price}}</p></div>
+            </div>  
+        {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

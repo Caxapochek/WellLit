@@ -1,0 +1,129 @@
+{% extends 'ceiling/base.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="container-1200">
+        <div class="grid-center vert-margin-100">
+            <h1>
+                Прайс-лист на наши услуги
+            </h1>
+            <span>
+                Здесь вы можете ознакомиться с нашими ценами на натяжные потолки по городу Ярославлю
+            </span>
+            <div class="vert-margin-50">
+                <img src="{% static 'ceiling/images/canvases3.jpg' %}">
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-1200">
+        <div class="grid-center vert-margin-100">
+            <h2>
+                Цены на пленки
+            </h2>
+            <span>
+                Цены ниже укааны за 1 кв.м.
+            </span>
+            <table class="table-ceilings vert-margin-50">
+                <tbody>
+                    <tr>
+                        <th>Модель</th>
+                        {% for model in models %}
+                            <th><p>{{ model }}</p></th>
+                        {% endfor %}
+                    </tr>
+                    {% for color, models in ceilings_pivot.items %}
+                        <tr>   
+                            <td>{{ color }}</td>
+                            {% for model, price in models.items %}
+                            <td>{{ price }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                        <tr>   
+                            <td></td>
+                            <td><button class="btn-more-info"><a href="https://msdrussia.ru/catalogue/">Больше</a></button></td>
+                            <td><button class="btn-more-info"><a href="https://msdrussia.ru/catalogue/">Больше</a></button></td>
+                            <td><button class="btn-more-info"><a href="https://bauf.ru/продукты/">Больше</a></button></td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-1200">
+        <div class="vert-margin-50">
+            <h4>
+                В наших работах мы используем качественные полотна производителей MSD и BAUF. Полотна имеют все необходимые сертификаты и прошли проверку временем.
+            </h4>
+        </div>
+        <div class="about-company vert-margin-50 ">
+            <div>
+                <h3>
+                    MSD
+                </h3>
+                <span>
+                    Компания MSD на мировом рынке с 2002 года и производит высококачественные полотна соответствующие всем современным стандартам
+                </span>
+                <span>
+                    Полотно MSD для натяжных потолков производится на крупном китайском заводе Zhejiang MSD Group Share Co., Ltd.
+                </span>
+                <button class="btn-about-company">
+                    <a href="https://msdrussia.ru/catalogue/">
+                        На сайт компании
+                    </a>
+                </button>
+            </div>
+            <div>
+                <img src="{% static 'ceiling/images/logo_msd.png' %}">
+            </div>
+        </div>
+        <div class="about-company vert-margin-50">
+            <div>
+                <img src="{% static 'ceiling/images/logo_bauf.png' %}">
+            </div>
+            <div>
+                <h3>
+                    Bauf
+                </h3>
+                <span>
+                    Фирма BAUF – один из ведущих поставщиков ПВХ пленок для натяжных потолков с десятилетней историей производства, развития и традициями производящий полотна для натяжных потолков премиального качетсва
+                </span>
+                <button class="btn-about-company">
+                    <a href="https://bauf.ru/продукты/">
+                        На сайт компании
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-1200">
+        <div>
+            <h2>
+                Цены на услуги
+            </h2>
+        </div>
+        <table class="table-services vert-margin-50">
+            <tbody>
+                <tr>
+                    <th>Модель</th>
+                    <th>Модель</th>
+                    <th>Модель</th>
+                </tr>
+                {% for service in services %}
+                    <tr>   
+                        <td>{{ service.name }}</td>
+                        <td>{{ service.measurement }}</td>
+                        <td>{{ service.price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}
