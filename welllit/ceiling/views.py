@@ -1,3 +1,4 @@
+from django.http import HttpResponseNotFound
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, ListView
 from django.urls import reverse_lazy
@@ -110,3 +111,7 @@ class PortfolioPage(DataMixin, ListView):
                                               keywords = 'welllit, велит, натяжной, потолок, портфолио, работа, галерея, пример')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
+
+def pageNotFound(request, exception):
+    main_url = reverse_lazy('main')
+    return HttpResponseNotFound(f'<h1>Страница не найдена</h1><a href="{main_url}">На главную</a>')
