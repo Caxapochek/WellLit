@@ -1,0 +1,44 @@
+User-agent: *
+Allow: /info/installation-procedure
+Allow: /info/colors-and-textures
+Allow: /price-list
+Allow: /calculator
+Allow: /portfolio
+Disallow: /contactus
+Disallow: /admin
+Disallow: /*.pdf
+Disallow: /*.ppt
+Disallow: /*.doc
+Disallow: /*.xls
+Disallow: /*.txt
+
+User-agent: Yandex
+Allow: /info/installation-procedure
+Allow: /info/colors-and-textures
+Allow: /price-list
+Allow: /calculator
+Allow: /portfolio
+Disallow: /contactus
+Disallow: /admin
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.gif
+
+User-agent: Googlebot
+Allow: /info/installation-procedure
+Allow: /info/colors-and-textures
+Allow: /price-list
+Allow: /calculator
+Allow: /portfolio
+Disallow: /contactus
+Disallow: /admin
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.gif
+
+Host: https://welllit.ru
+Sitemap: https://welllit.ru/sitemap.xml

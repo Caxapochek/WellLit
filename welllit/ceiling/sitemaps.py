@@ -13,6 +13,6 @@ class StaticViewSitemap(Sitemap):
             # 'calculator',
             # 'portfolio']
 
-    def locations(self, item):
+    def location(self, item):
         return reverse(item)
 
