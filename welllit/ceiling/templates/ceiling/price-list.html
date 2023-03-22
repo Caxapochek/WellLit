@@ -24,7 +24,7 @@
                 Цены на пленки
             </h2>
             <span>
-                Цены ниже укааны за 1 кв.м.
+                Цены ниже указаны за 1 кв.м.
             </span>
             <table class="table-ceilings vert-margin-50">
                 <tbody>
@@ -42,12 +42,6 @@
                             {% endfor %}
                         </tr>
                     {% endfor %}
-                        <tr>   
-                            <td></td>
-                            <td><button class="btn-more-info"><a href="https://msdrussia.ru/catalogue/">Больше</a></button></td>
-                            <td><button class="btn-more-info"><a href="https://msdrussia.ru/catalogue/">Больше</a></button></td>
-                            <td><button class="btn-more-info"><a href="https://bauf.ru/продукты/">Больше</a></button></td>
-                        </tr>
                 </tbody>
             </table>
         </div>
@@ -111,15 +105,15 @@
         <table class="table-services vert-margin-50">
             <tbody>
                 <tr>
-                    <th>Модель</th>
-                    <th>Модель</th>
-                    <th>Модель</th>
+                    <th>НАИМЕНОВАНИЕ</th>
+                    <th>Ед. изм.</th>
+                    <th>Цена</th>
                 </tr>
                 {% for service in services %}
                     <tr>   
-                        <td>{{ service.name }}</td>
+                        <td style="white-space: pre-wrap;">{{ service.name }}</td>
                         <td>{{ service.measurement }}</td>
-                        <td>{{ service.price }}</td>
+                        <td style="white-space: nowrap;"><p>{{ service.price }}р.</p></td>
                     </tr>
                 {% endfor %}
             </tbody>

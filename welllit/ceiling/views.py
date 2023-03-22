@@ -57,8 +57,8 @@ class PriceListPage(DataMixin, ListView):
     model = Celings
     context_object_name = 'celings'
     ceilings = Celings.objects.all()
-    models = Celings.objects.values_list('model', flat=True).distinct()
-    colors = dict.fromkeys(Celings.objects.values_list('color', flat=True).distinct())
+    models = Celings.objects.values_list('model', flat=True).distinct().order_by('model')
+    colors = dict.fromkeys(Celings.objects.values_list('color', flat=True).distinct().order_by('color'))
     for k, v in colors.items():
         colors[k] = {} | dict.fromkeys(models, '-').copy()
     for ceiling in ceilings: 
