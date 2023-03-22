@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic.base import RedirectView
 
 from . import settings
 from ceiling.views import *
@@ -27,10 +28,12 @@ sitemaps = {
     'static': StaticViewSitemap,
 }
 
+favicon_view = RedirectView.as_view(url='/static/ceiling/favicon.ico', permanent=True)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    re_path(r'^favicon\.ico$', favicon_view),
     path('', include('ceiling.urls'))
 ]
 
