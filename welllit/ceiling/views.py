@@ -15,7 +15,9 @@ class MainPage(DataMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mixin_context = self.get_user_context(title = 'Главная страница')
+        mixin_context = self.get_user_context(title = 'Главная страница',
+                                              description = 'Сайт компания Welllit. Монтаж натяжных потолков под ключ в Ярославле.',
+                                              keywords = 'welllit, велит, натяжной, потолок, ярославль, монтаж')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -25,7 +27,9 @@ class InstallationPage(DataMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mixin_context = self.get_user_context(title = 'Процедура установки')
+        mixin_context = self.get_user_context(title = 'Процесс монтажа',
+                                              description = 'Описание процесса монтажа натяжных потолков. Инструменты, шаги, материалы.',
+                                              keywords = 'welllit, велит, натяжной, потолок, процесс, монтаж, шаги')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -35,7 +39,9 @@ class ColorsAndTexturesPage(DataMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mixin_context = self.get_user_context(title = 'Цвета и фактуры')
+        mixin_context = self.get_user_context(title = 'Цвета и фактуры',
+                                              description = 'Какие бывают натяжные потолки? Формы, материалы, фактуры, цвета.',
+                                              keywords = 'welllit, велит, натяжной, потолок, формы, материалы, фактуры, цвета, пвх, тканевая, матовый, глянцевый, сатиновый')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -47,7 +53,9 @@ class ContactUsPage(DataMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mixin_context = self.get_user_context(title = 'Контакты')
+        mixin_context = self.get_user_context(title = 'Контакты',
+                                              description = 'Оставьте заявку на сайте или свяжитесь с нами любым, удобным для вас, способом. ',
+                                              keywords = 'welllit, велит, натяжной, потолок, контакты, купитьб заказать')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -70,7 +78,9 @@ class PriceListPage(DataMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mixin_context = self.get_user_context(title = 'Прайс-лист')
+        mixin_context = self.get_user_context(title = 'Прайс-лист',
+                                              description = 'Актуальные цены на материалы, работы и услуги, которые мы предлагаем.',
+                                              keywords = 'welllit, велит, натяжной, потолок, полотно,  цены, прайс-лист, ярославль')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -81,7 +91,9 @@ class СalculatorPage(DataMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mixin_context = self.get_user_context(title = 'Калькулятор')
+        mixin_context = self.get_user_context(title = 'Калькулятор',
+                                              description = 'Калькулятор расчета стоимости натяжного потолка. Посчитайте сколько будет стоить установка по вашим замерам.',
+                                              keywords = 'welllit, велит, натяжной, потолок, калькулятор, цена, посчитать')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -93,6 +105,8 @@ class PortfolioPage(DataMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mixin_context = self.get_user_context(title = 'Наши работы')
+        mixin_context = self.get_user_context(title = 'Наши работы',
+                                              description = 'Наше портфолио. Здесь можно ознакомиться с работами, которые мы производили.',
+                                              keywords = 'welllit, велит, натяжной, потолок, портфолио, работа, галерея, пример')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context

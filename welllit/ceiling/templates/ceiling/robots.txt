@@ -6,6 +6,7 @@ Allow: /calculator
 Allow: /portfolio
 Disallow: /contactus
 Disallow: /admin
+Disallow: /static/*
 Disallow: /*.pdf
 Disallow: /*.ppt
 Disallow: /*.doc
