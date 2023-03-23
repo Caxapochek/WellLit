@@ -16,7 +16,7 @@ class MainPage(DataMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        mixin_context = self.get_user_context(title = 'Главная страница',
+        mixin_context = self.get_user_context(title = 'Натяжные потолки в Ярославле',
                                               description = 'Сайт компания Welllit. Монтаж натяжных потолков под ключ в Ярославле.',
                                               keywords = 'welllit, велит, натяжной, потолок, ярославль, монтаж')
         context = dict(list(context.items()) + list(mixin_context.items()))
