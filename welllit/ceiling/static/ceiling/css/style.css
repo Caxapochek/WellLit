@@ -727,11 +727,13 @@ li.closed-block div.quest-answ-dropdown-block li{
 .t-sociallinks__svg {
     width:30px;
     height:30px;
+    margin: 2px;
 }
 
 .t-sociallinks__svg:hover {
-    width:35px;
-    height:35px;
+    width:34px;
+    height:34px;
+    margin: 0px;
 }
 
 .form {
