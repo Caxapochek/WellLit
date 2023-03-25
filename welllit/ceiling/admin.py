@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 
 # Register your models here.
 
@@ -37,6 +38,11 @@ class portfoliofotoAdmin(admin.ModelAdmin):
     list_display_links = ('portfolioID','img')
     search_fields = ('portfolioID',)
     list_filter = ('portfolioID',)
+    
+    def get_html_photo(self, object):
+        if object.photo:
+            return mark_safe(f"<img src='{object.photo.url}' width=50>")
+    get_html_photo.short_description = "Миниатюра"
 
 
 admin.site.register(Application, ApplicationAdmin)

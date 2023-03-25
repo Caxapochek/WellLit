@@ -1,0 +1,48 @@
+{% extends 'ceiling/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section class="block">
+    <div class="container-1200 grid-center">
+        <div class=" vert-margin-50">
+            <h1 class="vert-margin-50">
+                {{portfolioitem.title}}
+            </h1>
+        </div>
+   </div>
+</section>
+<section id="section-portfolio-item" class="block">
+    <div class="container-1200 grid-center ">
+        <h2>Характеристики:</h2>
+        <div class="vert-margin-50 double-column text-left">
+                <p>Площадь: {{portfolioitem.square}} м2</p>
+                <p>Помещение: {{portfolioitem.room}}</p>
+                <p>Тип материала: {{portfolioitem.material}}</p>
+                <p>Фактура: {{portfolioitem.invoice}}</p>
+                <p>Цвет: {{portfolioitem.color}}</p>
+                <p>Углы: {{portfolioitem.corners}}</p>
+                <p>Профиль: {{portfolioitem.section}}</p>
+                <p>Точек света: {{portfolioitem.light}}</p>
+                <p>Обходов труб: {{portfolioitem.pipe}}</p>
+                <div><p>Цена: {{portfolioitem.price}}р.</p></div>
+        </div>
+        {% if portfolioitem.description != '' %}<h2>Описание:</h2>{% endif%}
+        <div class="vert-margin-50">
+            <span>
+                {{portfolioitem.description}}
+            </span>            
+        </div>
+        <h2>Галерея:</h2>
+        <div class="triple-column vert-margin-100">
+            {% for i in portfolioitem.portfoliophoto_set.all %}
+            <div class="black-border" style="max-width: 400px;">
+                <img src="{{ i.img.url }}" alt="Фото натяжных потолков">
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+   </div>
+</section>
+
+{% endblock %}

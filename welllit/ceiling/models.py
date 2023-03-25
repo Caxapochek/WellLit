@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -65,18 +66,22 @@ class Services(models.Model):
 
 
 class Portfolio(models.Model):
-    title = models.CharField(max_length=255, null=False, verbose_name='Описание')
-    square = models.FloatField(null=False, verbose_name='Площадь')
-    room = models.CharField(max_length=255, null=False, verbose_name='Помещение')
-    material = models.CharField(max_length=255, null=False, verbose_name='Материял')
-    invoice = models.CharField(max_length=255, null=False, verbose_name='Фактура')
-    color = models.CharField(max_length=255, null=False, verbose_name='Цвет')
-    corners = models.IntegerField(null=False, verbose_name='Углы')
-    section = models.CharField(max_length=255, null=False, verbose_name='Профиль')
-    light = models.IntegerField(null=False, verbose_name='Точек света')
-    pipe = models.IntegerField(null=False, verbose_name='Обходов труб')
-    price = models.IntegerField(null=False, verbose_name='Цена')
-    slug = models.SlugField(max_length=255, db_index=True, verbose_name='URL')
+    title = models.CharField(max_length=255, null=False, verbose_name='Загаловок', default='')
+    square = models.FloatField(null=False, verbose_name='Площадь', default=0)
+    room = models.CharField(max_length=255, null=False, verbose_name='Помещение', default='')
+    material = models.CharField(max_length=255, null=False, verbose_name='Материял', default='')
+    invoice = models.CharField(max_length=255, null=False, verbose_name='Фактура', default='')
+    color = models.CharField(max_length=255, null=False, verbose_name='Цвет', default='')
+    corners = models.IntegerField(null=False, verbose_name='Углы', default=0)
+    section = models.CharField(max_length=255, null=False, verbose_name='Профиль', default='')
+    light = models.IntegerField(null=False, verbose_name='Точек света', default=0)
+    pipe = models.IntegerField(null=False, verbose_name='Обходов труб', default=0)
+    price = models.IntegerField(null=False, verbose_name='Цена', default=0)
+    description = models.CharField(max_length=255, null=False, verbose_name='Описание', default='')
+    slug = models.SlugField(max_length=255, unique=True, null=False, db_index=True, verbose_name='URL')
+    
+    def get_absolute_url(self):
+        return reverse('portfolio-item', kwargs={'portfolioitem_slug': f'{self.slug}'})
 
     class Meta:
         verbose_name = 'Карточка портфолио'

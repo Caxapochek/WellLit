@@ -1,6 +1,6 @@
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, ListView
+from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from django.urls import reverse_lazy
 
 from .models import Application
@@ -103,6 +103,21 @@ class PortfolioPage(DataMixin, ListView):
     template_name = 'ceiling/portfolio.html'
     model = Portfolio
     context_object_name = 'portfolio'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        mixin_context = self.get_user_context(title = 'Наши работы',
+                                              description = 'Наше портфолио. Здесь можно ознакомиться с работами, которые мы производили.',
+                                              keywords = 'welllit, велит, натяжной, потолок, портфолио, работа, галерея, пример')
+        context = dict(list(context.items()) + list(mixin_context.items()))
+        return context
+
+
+class PortfolioItemPage(DataMixin, DetailView):
+    template_name = 'ceiling/portfolio-item-page.html'
+    model = Portfolio
+    slug_url_kwarg = 'portfolioitem_slug'
+    context_object_name = 'portfolioitem'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
