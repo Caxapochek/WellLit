@@ -559,7 +559,7 @@ li.dropdown {
     list-style: none;
 }
 
-.img-fit-50-50 {
+.img-fit-50-50 img {
     object-fit: cover;
     object-position: 50% 50%;
 }

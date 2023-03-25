@@ -22,10 +22,11 @@ from django.views.generic.base import RedirectView
 from . import settings
 from ceiling.views import *
 
-from ceiling.sitemaps import StaticViewSitemap
+from ceiling.sitemaps import StaticViewSitemap, PortfolioSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
+    'portfolio': PortfolioSitemap,
 }
 
 favicon_view = RedirectView.as_view(url='/static/ceiling/favicon/favicon.ico', permanent=True)
