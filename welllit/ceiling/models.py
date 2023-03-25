@@ -76,6 +76,7 @@ class Portfolio(models.Model):
     light = models.IntegerField(null=False, verbose_name='Точек света')
     pipe = models.IntegerField(null=False, verbose_name='Обходов труб')
     price = models.IntegerField(null=False, verbose_name='Цена')
+    slug = models.SlugField(max_length=255, db_index=True, verbose_name='URL')
 
     class Meta:
         verbose_name = 'Карточка портфолио'

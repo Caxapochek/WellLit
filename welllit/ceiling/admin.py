@@ -29,6 +29,7 @@ class portfolioAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
     search_fields = ('room','material', 'invoice', 'color', 'section')
     list_filter = ('room','material', 'invoice', 'color', 'section')
+    prepopulated_fields = {'slug': ('title','price')}
 
 
 class portfoliofotoAdmin(admin.ModelAdmin):

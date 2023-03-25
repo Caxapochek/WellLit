@@ -28,7 +28,7 @@ sitemaps = {
     'static': StaticViewSitemap,
 }
 
-favicon_view = RedirectView.as_view(url='/static/ceiling/favicon.ico', permanent=True)
+favicon_view = RedirectView.as_view(url='/static/ceiling/favicon/favicon.ico', permanent=True)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
