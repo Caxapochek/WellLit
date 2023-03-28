@@ -4,7 +4,7 @@ Allow: /info/colors-and-textures
 Allow: /price-list
 Allow: /calculator
 Allow: /portfolio
-Disallow: /contactus
+Allow: /contactus
 Disallow: /admin
 Disallow: /static/*
 Disallow: /*.pdf
@@ -19,7 +19,7 @@ Allow: /info/colors-and-textures
 Allow: /price-list
 Allow: /calculator
 Allow: /portfolio
-Disallow: /contactus
+Allow: /contactus
 Disallow: /admin
 Allow: /*.css
 Allow: /*.js
@@ -33,7 +33,7 @@ Allow: /info/colors-and-textures
 Allow: /price-list
 Allow: /calculator
 Allow: /portfolio
-Disallow: /contactus
+Allow: /contactus
 Disallow: /admin
 Allow: /*.css
 Allow: /*.js
