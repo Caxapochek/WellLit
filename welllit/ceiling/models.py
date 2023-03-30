@@ -77,7 +77,7 @@ class Portfolio(models.Model):
     light = models.IntegerField(null=False, verbose_name='Точек света', default=0)
     pipe = models.IntegerField(null=False, verbose_name='Обходов труб', default=0)
     price = models.IntegerField(null=False, verbose_name='Цена', default=0)
-    description = models.CharField(max_length=255, null=True, verbose_name='Описание', default='')
+    description = models.CharField(max_length=255, null=True, verbose_name='Описание', default='', blank=True)
     slug = models.SlugField(max_length=255, unique=True, null=False, db_index=True, verbose_name='URL')
     
     def get_absolute_url(self):

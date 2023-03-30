@@ -34,14 +34,14 @@ class portfolioAdmin(admin.ModelAdmin):
 
 
 class portfoliofotoAdmin(admin.ModelAdmin):
-    list_display = ('id','portfolioID','img','main')
-    list_display_links = ('portfolioID','img')
+    list_display = ('id','portfolioID','get_html_photo','main')
+    list_display_links = ('portfolioID','get_html_photo')
     search_fields = ('portfolioID',)
     list_filter = ('portfolioID',)
     
     def get_html_photo(self, object):
-        if object.photo:
-            return mark_safe(f"<img src='{object.photo.url}' width=50>")
+        if object.img:
+            return mark_safe(f"<img src='{object.img.url}' width=100>")
     get_html_photo.short_description = "Миниатюра"
 
 
