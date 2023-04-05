@@ -11,7 +11,7 @@ function get_result(){
     result=(width/100) * ( length/100) * (canvases_price + 180) + ((width/100) * 2 + ( length/100) * 2) * (decor_insert) + gordina  + lights*500 + pipes*250
     result_field=document.getElementById('calculator-result-field')
     if (result){
-        result_field.textContent=result
+        result_field.textContent=result.toFixed(2)
     }
     else{
         result_field.textContent='-'
