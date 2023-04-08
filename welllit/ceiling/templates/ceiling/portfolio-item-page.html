@@ -27,10 +27,10 @@
                 <p>Обходов труб: {{portfolioitem.pipe}}</p>
                 <div><p>Цена: {{portfolioitem.price}}р.</p></div>
         </div>
-        {% if portfolioitem.description != '' %}<h2>Описание:</h2>{% endif%}
+        {% if portfolioitem.description %}<h2>Описание:</h2>{% endif%}
         <div class="vert-margin-50">
             <span>
-                {{portfolioitem.description}}
+                {% if portfolioitem.description %}{{portfolioitem.description}}{% endif%}
             </span>            
         </div>
         <h2>Галерея:</h2>
