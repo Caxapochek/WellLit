@@ -35,7 +35,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     re_path(r'^favicon\.ico$', favicon_view),
-    path('', include('ceiling.urls'))
+    path('', include('ceiling.urls')),
+    path('captcha/', include('captcha.urls'))
 ]
 
 handler404 = pageNotFound
