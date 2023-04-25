@@ -8,7 +8,7 @@
             <a class="logo" href=" {% url 'main' %}">
                 <img src="{% static 'ceiling/images/logos/logo_white.svg' %}" alt="За стеклом">
             </a>
-            <nav>
+            <nav class="navigator-menu">
                 <ul class="menu">
                 {% for item_menu in menu %}
                 {% if not item_menu.dropdown %}

@@ -189,6 +189,10 @@ div.blueline {
     height: 40px;
 }
 
+.navigator-menu {
+    overflow-y: auto;
+}
+
 .menu {
    display:flex;
 }
