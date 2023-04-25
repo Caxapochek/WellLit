@@ -11,7 +11,7 @@ function dropmenu(){
 let header = document.querySelector(".header")
 let dropdown = document.querySelector(".dropdown-content")
 window.onscroll = function(){
-    if(window.scrollY > 200){
+    if(window.scrollY > 200 && !document.querySelector('nav').classList.contains('active-menu')){
         header.style.background = "rgba(30, 30, 30, 0.8)"
         dropdown.style.background = "rgba(30, 30, 30, 0.8)"
     }
