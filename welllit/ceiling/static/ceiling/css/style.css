@@ -42,7 +42,7 @@ body {
     margin: 0px;
     font-family: 'Helvetica', sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.4;
     color: #3C3C3C
 }
@@ -57,11 +57,11 @@ h2 {
 }
 
 h3 {
-    font-size:30px;
+    font-size:36px;
 }
 
 h4 {
-    font-size:20px;
+    font-size:30px;
 }
 
 div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, img, b, u, i, center, table, tr, th, td, video {
@@ -594,55 +594,59 @@ li.dropdown {
 }
 
 .bg-room1 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
     url(../images/room1.jpg);
     background-size: cover;
-    padding: 40px;
     padding: 100px 50px;
 }
 
 .bg-room1:hover {
-    background: url(../images/room1.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../images/room1.jpg);
     background-size: cover;
 }
 .bg-room2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
     url(../images/room2.jpg);
     background-size: cover;
     padding: 100px 50px;
 }
 
 .bg-room2:hover {
-    background: url(../images/room2.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../images/room2.jpg);
     background-size: cover;
 }
 
 .bg-room3 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
     url(../images/room3.jpg);
     background-size: cover;
     padding: 100px 50px;
 }
 
 .bg-room3:hover {
-    background: url(../images/room3.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../images/room3.jpg);
     background-size: cover;
 }
 
 .bg-room4 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
     url(../images/room4.jpg);
     background-size: cover;
     padding: 100px 50px;
 }
 
 .bg-room4:hover {
-    background: url(../images/room4.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(../images/room4.jpg);
     background-size: cover;
 }
 .benefit-cart {
+    position: relative;
     text-align: left;
-    padding: 40px;
+    padding: 20px 70px 20px 40px;
     border: 1px solid rgb(233, 233, 233);
     box-shadow: 2px 2px 7px rgba(2, 2, 2, 0.5);
     transition-duration: 200ms;
@@ -651,6 +655,14 @@ li.dropdown {
 .benefit-cart:hover {
     border: 1px solid rgb(233, 233, 233);
     box-shadow: 0px 0px 12px rgba(2, 2, 2, 0.5);
+}
+
+.benefit-cart-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
 }
 
 li.closed-block {
@@ -1010,6 +1022,16 @@ li.closed-block div.quest-answ-dropdown-block li{
         justify-content: center;
         flex-direction: column;
     }
+    
+    .our-benefits-grid { 
+        display: grid;  
+        width: 100%;
+        height: 100%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        column-gap: 40px;
+    }
 
     .cards-forms {
         display: grid;  
@@ -1084,7 +1106,7 @@ li.closed-block div.quest-answ-dropdown-block li{
 @media (max-width:768px) {
         
     body {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.4;
     }
 
@@ -1217,15 +1239,6 @@ li.closed-block div.quest-answ-dropdown-block li{
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr;
         gap: 20px
-    }
-    .our-benefits-grid { 
-        display: grid;  
-        width: 100%;
-        height: 100%;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-        row-gap: 20px;
-        column-gap: 40px;
     }
 
     .QandA-ul {

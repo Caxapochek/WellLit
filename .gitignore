@@ -1,6 +1,6 @@
 *.log
 *.env
 *.sqlite3
-*/__pycache__/*
-*/welllit/settings.py
+*/__pycache__/
+welllit/welllit/settings.py
 welllit/static/
