@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="author" content="Илья Сахаров">
-        <meta http-equiv="content-type" content="text/html; charset=windows-1251">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="content-language" content="ru">
         <meta name="keywords" content="{{keywords}}">
         <meta name="description" content="{{description}}">
@@ -15,7 +15,9 @@
         <script defer src="{% static 'ceiling/js/bootstrap.min.js' %}"></script>
         <script defer src="{% static 'ceiling/js/bootstrap.bundle.min.js' %}"></script>
         <meta http-equiv="pragma" content="no-cache">
+        <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        {% if noindex %}<meta name="robots" content="noindex">{% endif%}
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

@@ -18,7 +18,7 @@ class MainPage(DataMixin, CreateView):
         context = super().get_context_data(**kwargs)
         mixin_context = self.get_user_context(title = 'WellLit - монтаж натяжных потолков в Ярославле',
                                               description = 'Сайт компания Welllit. Монтаж натяжных потолков под ключ в Ярославле. Поможем подобрать наилучшее решении именно для вас и качественно реализовать его в ближайшие сроки. Любые размеры, формы и материалы. Доставка, монтаж, гарантия 2 года!',
-                                              keywords = 'welllit, велит, натяжной, потолок, ярославль, монтаж')
+                                              keywords = 'welllit, велит, натяжной, потолок, ярославль, монтаж, установка, цена, бригада, компания')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -30,7 +30,7 @@ class InstallationPage(DataMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         mixin_context = self.get_user_context(title = 'Процесс монтажа',
                                               description = 'Описание процесса монтажа натяжных потолков. Инструменты, шаги, материалы.',
-                                              keywords = 'welllit, велит, натяжной, потолок, процесс, монтаж, шаги')
+                                              keywords = 'welllit, велит, натяжной, потолок, процесс, монтаж, установка, шаги')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -56,7 +56,7 @@ class ContactUsPage(DataMixin, CreateView):
         context = super().get_context_data(**kwargs)
         mixin_context = self.get_user_context(title = 'Контакты',
                                               description = 'Оставьте заявку на сайте или свяжитесь с нами любым, удобным для вас, способом. ',
-                                              keywords = 'welllit, велит, натяжной, потолок, контакты, купитьб заказать')
+                                              keywords = 'welllit, велит, натяжной, потолок, контакты, купить, заказать')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -81,7 +81,7 @@ class PriceListPage(DataMixin, ListView):
         context = super().get_context_data(**kwargs)
         mixin_context = self.get_user_context(title = 'Прайс-лист',
                                               description = 'Актуальные цены на материалы, работы и услуги, которые мы предлагаем.',
-                                              keywords = 'welllit, велит, натяжной, потолок, полотно,  цены, прайс-лист, ярославль')
+                                              keywords = 'welllit, велит, натяжной, потолок, полотно, цены, прайс-лист, ярославль')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -108,7 +108,7 @@ class PortfolioPage(DataMixin, ListView):
         context = super().get_context_data(**kwargs)
         mixin_context = self.get_user_context(title = 'Наши работы',
                                               description = 'Наше портфолио. Здесь можно ознакомиться с работами, которые мы производили.',
-                                              keywords = 'welllit, велит, натяжной, потолок, портфолио, работа, галерея, пример')
+                                              keywords = 'welllit, велит, натяжной, потолок, портфолио, работа, галерея, пример, фото')
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
@@ -123,7 +123,8 @@ class PortfolioItemPage(DataMixin, DetailView):
         context = super().get_context_data(**kwargs)
         mixin_context = self.get_user_context(title = 'Наши работы',
                                               description = 'Наше портфолио. Здесь можно ознакомиться с работами, которые мы производили.',
-                                              keywords = 'welllit, велит, натяжной, потолок, портфолио, работа, галерея, пример')
+                                              keywords = 'welllit, велит, натяжной, потолок, портфолио, работа, галерея, пример, фото',
+                                              noindex=True)
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
