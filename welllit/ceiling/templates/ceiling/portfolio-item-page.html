@@ -36,13 +36,16 @@
         <h2>Галерея:</h2>
         <div class="triple-column vert-margin-100">
             {% for i in portfolioitem.portfoliophoto_set.all %}
-            <div class="black-border" style="max-width: 400px;">
-                <img src="{{ i.img.url }}" alt="Фото натяжных потолков">
+            <div class="black-border thumb" style="max-width: 400px;">
+                <a data-fancybox="gallery" href="{{ i.img.url }}">
+                    <img src="{{ i.img.url }}"  alt="Фото натяжных потолков">
+                </a>
             </div>
             {% endfor %}
         </div>
         </div>
    </div>
 </section>
-
+<!-- fancyBox -->
+<script src="{% static 'ceiling/js/jquery.fancybox.min.js' %}"></script>
 {% endblock %}
