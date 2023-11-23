@@ -46,7 +46,7 @@
                 {% for item in form %}
                 <label class="form-label" for="{{ item.id_for_labl }}">{{item.label}}</label>
                 {{item}}
-                <div class="form-error">{{item.errors}}</div>
+                <div style="color: brown;" class="form-error">{{item.errors}}</div>
                 {% endfor %}
                 <button class="form-button" type="submit">Отправить</button>
             </form>

@@ -128,6 +128,19 @@ class PortfolioItemPage(DataMixin, DetailView):
         context = dict(list(context.items()) + list(mixin_context.items()))
         return context
 
+class SlivVodiPage(DataMixin, CreateView):
+    form_class = ApplicationForm
+    template_name = 'ceiling/sliv-vodi.html'
+    success_url = reverse_lazy('main')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        mixin_context = self.get_user_context(title = 'Слив воды снатяжного потолка',
+                                              description = 'Мы прдоставляем услуги по сливу воды с натяжного потолка без повреждения полотна.',
+                                              keywords = 'welllit, велит, натяжной, потолок, слив, вода, топит, течет')
+        context = dict(list(context.items()) + list(mixin_context.items()))
+        return context
+
 def pageNotFound(request, exception):
     main_url = reverse_lazy('main')
     return HttpResponseNotFound(f'<h1>Страница не найдена</h1><a href="{main_url}">На главную</a>')

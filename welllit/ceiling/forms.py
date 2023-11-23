@@ -6,7 +6,7 @@ from captcha.fields import CaptchaField, CaptchaTextInput
 
 
 class ApplicationForm(forms.ModelForm):
-    captcha = CaptchaField(label="Решите пример", error_messages = {"invalid": u"Неверно введено проверочное слово!"})
+    captcha = CaptchaField(label="Добавьте единицу к каждой цифре. 9 становится 0!", error_messages = {"invalid": u"Неверно введено проверочное слово!"})
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

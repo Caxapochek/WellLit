@@ -11,6 +11,7 @@ urlpatterns = [
     path('price-list/', PriceListPage.as_view(), name='price-list'),
     path('calculator/', СalculatorPage.as_view(), name='calculator'),
     path('portfolio/', PortfolioPage.as_view(), name='portfolio'),
+    path('sliv-vodi/', SlivVodiPage.as_view(), name='sliv-vodi'),
     path('portfolio/<slug:portfolioitem_slug>/', PortfolioItemPage.as_view(), name='portfolio-item'),
     path(
         'robots.txt/',
